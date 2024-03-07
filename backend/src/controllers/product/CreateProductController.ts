@@ -5,8 +5,11 @@ class CreateProductController {
     async handle(req: Request, res: Response) {
 
         const { name, price, description, category_id } = req.body
+
         const createProductService = new CreateProductService()
+
         let banner = ''
+
         const product = await createProductService.execute({
             name, price, description, banner, category_id
         })
