@@ -7,11 +7,10 @@ interface OrderRequest {
 
 class CreateOrderService {
     async execute({ table, name }: OrderRequest) {
-
         const order = await prismaClient.order.create({
             data: {
-                table: table,
-                name: name
+                table,
+                name
             }
         })
 

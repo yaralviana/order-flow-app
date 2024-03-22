@@ -31,6 +31,6 @@ router.post('/product', isAuthenticated, upload.single('file'), new CreateProduc
 router.get('/category/product', isAuthenticated, new ListByCategoryController().handle)
 
 // -- ROTAS PEDIDOS
-router.post('order', isAuthenticated, new CreateOrderController().handle)
+router.post('/order', isAuthenticated, new CreateOrderController().handle)
 
 export { router }
