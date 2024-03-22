@@ -8,6 +8,9 @@ import { CreateCategoryController } from './controllers/category/CreateCategoryC
 import { ListCategoryController } from './controllers/category/ListCategoryController'
 import { CreateProductController } from './controllers/product/CreateProductController'
 import { ListByCategoryController } from './controllers/product/ListByCategoryController'
+import { CreateOrderController } from './controllers/order/CreateOrderController'
+
+
 import uploadConfig from './config/multer'
 
 const router = Router()
@@ -26,5 +29,8 @@ router.get('/category', isAuthenticated, new ListCategoryController().handle)
 // -- ROTAS PRODUTO
 router.post('/product', isAuthenticated, upload.single('file'), new CreateProductController().handle)
 router.get('/category/product', isAuthenticated, new ListByCategoryController().handle)
+
+// -- ROTAS PEDIDOS
+router.post('order', isAuthenticated, new CreateOrderController().handle)
 
 export { router }

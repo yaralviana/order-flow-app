@@ -51,7 +51,7 @@ model Product {
 
 model Order {
   id         String    @id @default(uuid())
-  table      String
+  table      Int
   status     Boolean   @default(false)
   draft      Boolean   @default(true)
   name       String?

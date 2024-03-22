@@ -25,7 +25,7 @@ CREATE TABLE "products" (
 -- CreateTable
 CREATE TABLE "orders" (
     "id" TEXT NOT NULL,
-    "table" TEXT NOT NULL,
+    "table" INTEGER NOT NULL,
     "status" BOOLEAN NOT NULL DEFAULT false,
     "draft" BOOLEAN NOT NULL DEFAULT true,
     "name" TEXT,
